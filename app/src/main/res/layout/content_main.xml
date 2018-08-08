@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/app_bar_main">
+
+    <!-- The android:opacity=”opaque” line — this is critical in preventing a flash of black as your theme transitions. -->
+    <!--<layer-list xmlns:android="http://schemas.android.com/apk/res/android" android:opacity="opaque">
+
+        &lt;!&ndash; The background color, preferably the same as your normal theme &ndash;&gt;
+        <item android:drawable="@android:color/white"/>
+
+        &lt;!&ndash; Your product logo - 144dp color version of your app icon &ndash;&gt;
+        <item>
+
+            <bitmap
+                android:src="@drawable/product_logo_144dp"
+                android:gravity="center"/>
+
+        </item>
+
+    </layer-list>-->
+
+</android.support.constraint.ConstraintLayout>
