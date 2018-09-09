@@ -43,16 +43,16 @@ public class MainActivity extends AppCompatActivity
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         myDb = new DatabaseHelper(this);
 
-        theDrawer = (DrawerLayout) findViewById(R.id.drawer);
+        /*theDrawer = (DrawerLayout) findViewById(R.id.drawer);
         toggle = new ActionBarDrawerToggle(this, theDrawer, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         theDrawer.addDrawerListener(toggle);
         NavigationView nvDrawer = (NavigationView) findViewById(R.id.nav);
         toggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        setupDrawerContent(nvDrawer);
+        setupDrawerContent(nvDrawer);*/
     }
 
-    @Override
+ /*   @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (toggle.onOptionsItemSelected(item))
         {
@@ -60,8 +60,8 @@ public class MainActivity extends AppCompatActivity
         }
         return super.onOptionsItemSelected(item);
     }
-
-    //Handle the Drawer clicks
+*/
+   /* //Handle the Drawer clicks
     public void selectItemDrawer(MenuItem theItem)
     {
         android.support.v4.app.Fragment frag = null;
@@ -116,6 +116,6 @@ public class MainActivity extends AppCompatActivity
                 return true;
             }
         });
-    }
+    }*/
 
 }
