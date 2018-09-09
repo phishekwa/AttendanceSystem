@@ -1,9 +1,14 @@
 package petrusproject.com.attendancesystem;
 
+import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -15,91 +20,102 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+{
+
+
+
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
+    private ViewPageAdapter viewPageAdapter;
+
+    private DrawerLayout theDrawer;
+    private ActionBarDrawerToggle toggle;
+
+
+    //Object of DatabaseHelper class
+    DatabaseHelper myDb;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //getSupportActionBar().setDisplayShowHomeEnabled(true);
-        //getSupportActionBar().setLogo(R.drawable.logo);
-        //getSupportActionBar().setDisplayUseLogoEnabled(true);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        myDb = new DatabaseHelper(this);
 
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
+        theDrawer = (DrawerLayout) findViewById(R.id.drawer);
+        toggle = new ActionBarDrawerToggle(this, theDrawer, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        theDrawer.addDrawerListener(toggle);
+        NavigationView nvDrawer = (NavigationView) findViewById(R.id.nav);
         toggle.syncState();
-
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
-    }
-
-    @Override
-    public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setupDrawerContent(nvDrawer);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (toggle.onOptionsItemSelected(item))
+        {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
+    //Handle the Drawer clicks
+    public void selectItemDrawer(MenuItem theItem)
+    {
+        android.support.v4.app.Fragment frag = null;
+        Class fragClass = null;
 
-        if (id == R.id.t_attendance)
+        //Open a fragment corresponding to a clicked item on a menu
+        switch (theItem.getItemId())
         {
-            Intent myIntent = new Intent(getBaseContext(),Take_Attendance.class);
-            startActivity(myIntent);
-        }
-        else if (id == R.id.v_attendance)
-        {
-            Intent myIntent = new Intent(getBaseContext(),View_Attendance.class);
-            startActivity(myIntent);
-        }
-        else if (id == R.id.r_marks)
-        {
-            Intent myIntent = new Intent(getBaseContext(),Record_Marks.class);
-            startActivity(myIntent);
-        }
-        else if (id == R.id.v_marks)
-        {
-            Intent myIntent = new Intent(getBaseContext(),View_Marks_Records.class);
-            startActivity(myIntent);
+            case R.id.tk_attendanceItem:
+               fragClass = Attendance.class;
+               break;
+
+            case R.id.v_attendanceItem:
+                fragClass = AttendanceView.class;
+                break;
+
+            case R.id.tk_assessmentItem:
+                fragClass = Assessment.class;
+                break;
+
+            case R.id.v_assessmentItem:
+                fragClass = AssessmentView.class;
+                break;
+
+            case R.id.settingItem:
+                fragClass = Settings.class;
+                break;
+             default:
         }
 
+        try {
+            frag = (android.support.v4.app.Fragment) fragClass.newInstance();
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+        }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.contentFlow, frag).commit();
+        theItem.setChecked(true);
+        setTitle(theItem.getTitle());
+        theDrawer.closeDrawers();
     }
+
+    //Setup Drawer content
+    public void setupDrawerContent(NavigationView navigationView)
+    {
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                selectItemDrawer(item);
+                return true;
+            }
+        });
+    }
+
 }

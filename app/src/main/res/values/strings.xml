@@ -1,10 +1,25 @@
 <resources>
-    <string name="app_name">Attendance System</string>
+    <string name="app_name">Student Class Records</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Attendance System</string>
+    <string name="nav_header_title">SCR</string>
     <string name="nav_header_subtitle">Facilitate the process</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
+
     <string name="hello">Me and Prof Peunte, we developers</string>
+    <string name="searchHint">201304628</string>
+    <string name="studentNumberHint">Enter Student number</string>
+    <string name="studentNameHint">Enter Student name</string>
+    <string name="moduleCodeHint">Enter Module code</string>
+
+    <string name="moduleSearchHint">COS3812</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="f_assessment">Assessment Recording</string>
+    <string name="f_view_assessment">Assessment View</string>
+    <string name="f_attendance">Attendance Recording</string>
+    <string name="f_view_attendance">Attendance View</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

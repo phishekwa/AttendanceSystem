@@ -16,19 +16,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Take_Attendance" />
-        <activity android:name=".View_Attendance" />
+        <!--<activity android:name=".Take_Attendance" />
+        <activity android:name=".AttendanceView" />
         <activity android:name=".Record_Marks" />
-        <activity android:name=".View_Marks_Records"></activity>
+        <activity android:name=".View_Marks_Records" />-->
     </application>
 
 </manifest>

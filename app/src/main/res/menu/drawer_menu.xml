@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/tk_attendanceItem" android:title="Take Attendance"
+        android:icon="@drawable/ic_take_attendance"/>
+    <item android:id="@+id/v_attendanceItem" android:title="View Attendance"
+        android:icon="@drawable/ic_view_attendance"/>
+    <item android:id="@+id/tk_assessmentItem" android:title="Assess"
+        android:icon="@drawable/ic_assessment"/>
+    <item android:id="@+id/v_assessmentItem" android:title="View Assessment"
+        android:icon="@drawable/ic_view_assessment"/>
+    <item android:id="@+id/settingItem" android:title="Settings"
+        android:icon="@drawable/ic_settings"/>
+</menu>
