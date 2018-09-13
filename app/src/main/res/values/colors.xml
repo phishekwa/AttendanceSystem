@@ -5,9 +5,12 @@
     <color name="colorAccent">#FF4081</color>
     <color name="white">#ffffff</color>
     <color name="darkGray">#6c6c6c</color>
+
     <color name="itemColor">#d6d09a</color>
     <color name="fragmentColor">#cfb156</color>
     <color name="black">#0e0b01</color>
-    <color name="circleColor">#b3ae5d</color>
-    <color name="dashBoardItemsColor">#9c5b21</color>
+
+    <color name="circleColor">#feffffff</color>
+    <color name="dashBoardItemsColor">#e39c5b21</color>
+    <color name="primaryDark">#765d4037</color>
 </resources>
