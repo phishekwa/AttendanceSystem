@@ -1,29 +1,25 @@
 package petrusproject.com.attendancesystem;
 
-
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+import android.widget.TextView;
 
+import java.text.DateFormat;
+import java.text.Format;
+import java.util.Calendar;
 
-/**
- * A simple {@link Fragment} subclass.
- */
-public class Attendance extends Fragment {
-
-
-    public Attendance() {
-        // Required empty public constructor
-    }
-
+public class Attendance extends AppCompatActivity {
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_attendance, container, false);
-    }
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_attendance);
 
+        //Get current date
+        Calendar dyt = Calendar.getInstance();
+        String currentDate = DateFormat.getDateInstance(DateFormat.SHORT).format(dyt.getTime());
+
+        TextView showDateAttend = findViewById(R.id.attendViewDateId);
+        showDateAttend.setText(currentDate);
+    }
 }

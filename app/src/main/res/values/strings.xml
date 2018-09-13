@@ -3,7 +3,7 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">SCR</string>
-    <string name="nav_header_subtitle">Facilitate the process</string>
+    <string name="nav_header_subtitle">Facilitating the process</string>
     <string name="nav_header_desc">Navigation header</string>
 
     <string name="hello">Me and Prof Peunte, we developers</string>
@@ -22,4 +22,22 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_assessment">Assessment</string>
+    <string-array name="category">
+        <item>Test</item>
+        <item>Assignment</item>
+        <item>Quiz</item>
+        <item>Normal Exam</item>
+        <item>Special Exam</item>
+        <item>Alternate/Make-Up Test</item>
+    </string-array>
+
+    <string-array name="modules">
+        <item>COS3672</item>
+        <item>CMP3612</item>
+        <item>COS3812</item>
+        <item>CIT3682</item>
+        <item>COC3212</item>
+        <item>BTE3617</item>
+    </string-array>
 </resources>

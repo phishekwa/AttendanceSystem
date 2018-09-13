@@ -4,8 +4,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="10dp"
     android:orientation="vertical"
-    android:weightSum="15"
+    android:weightSum="18"
     tools:context=".MainActivity">
 <!--<android.support.v4.widget.DrawerLayout
     android:layout_width="match_parent"
@@ -40,15 +41,41 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="35dp"
-        android:layout_weight="3"
-        android:background="@drawable/header_color">
+        android:layout_height="0dp"
+        android:layout_weight="6"
+        android:background="@drawable/header_color"
+        android:padding="7dp"
+        android:id="@+id/profileLayout">
 
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:paddingLeft="4dp"
-            android:src="@drawable/logo" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="start"
+            android:padding="10dp">
+
+            <ImageView
+                android:src="@drawable/logo"
+                android:layout_width="100dp"
+                android:layout_height="100dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nav_header_title"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="@string/nav_header_subtitle"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            android:layout_alignParentBottom="true"/>
     </RelativeLayout>
 
     <GridLayout
@@ -59,12 +86,14 @@
         android:columnOrderPreserved="false"
         android:padding="14dp"
         android:layout_weight="12"
-        android:background="@drawable/background_color"
+        android:background="@color/fragmentColor"
         android:layout_width="match_parent"
         android:layout_height="0dp">
 
         <android.support.v7.widget.CardView
-            android:id="@+id/takeAttendanceGridViewId"
+            android:id="@+id/takeAttendanceCardViewId"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_columnWeight="1"
@@ -72,9 +101,9 @@
             android:layout_marginBottom="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            app:cardElevation="8dp"
-            app:cardBackgroundColor="@color/fragmentColor"
-            app:cardCornerRadius="8dp">
+            app:cardElevation="50dp"
+            app:cardBackgroundColor="@color/dashBoardItemsColor"
+            app:cardCornerRadius="20sp">
 
             <LinearLayout
                 android:layout_gravity="center_horizontal|center_vertical"
@@ -84,8 +113,9 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:background="@drawable/circle"
                     android:layout_gravity="center_horizontal"
                     android:src="@drawable/ic_take_attendance"/>
 
@@ -104,7 +134,9 @@
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
-            android:id="@+id/viewAttendanceGridViewId"
+            android:id="@+id/viewAttendanceCardViewId"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_columnWeight="1"
@@ -112,9 +144,9 @@
             android:layout_marginBottom="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            app:cardBackgroundColor="@color/fragmentColor"
-            app:cardElevation="8dp"
-            app:cardCornerRadius="8dp">
+            app:cardBackgroundColor="@color/dashBoardItemsColor"
+            app:cardElevation="50dp"
+            app:cardCornerRadius="20sp">
 
             <LinearLayout
                 android:layout_gravity="center_horizontal|center_vertical"
@@ -124,8 +156,9 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:background="@drawable/circle"
                     android:layout_gravity="center_horizontal"
                     android:src="@drawable/ic_view_attendance"/>
 
@@ -144,7 +177,9 @@
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
-            android:id="@+id/assessGridViewId"
+            android:id="@+id/assessCardViewId"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_columnWeight="1"
@@ -152,9 +187,9 @@
             android:layout_marginBottom="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            app:cardBackgroundColor="@color/fragmentColor"
-            app:cardElevation="8dp"
-            app:cardCornerRadius="8dp">
+            app:cardBackgroundColor="@color/dashBoardItemsColor"
+            app:cardElevation="50dp"
+            app:cardCornerRadius="20sp">
 
             <LinearLayout
                 android:layout_gravity="center_horizontal|center_vertical"
@@ -164,8 +199,9 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:background="@drawable/circle"
                     android:layout_gravity="center_horizontal"
                     android:src="@drawable/ic_assessment"/>
 
@@ -184,7 +220,9 @@
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
-            android:id="@+id/viewAssessGridViewId"
+            android:id="@+id/viewAssessCardViewId"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_columnWeight="1"
@@ -192,9 +230,9 @@
             android:layout_marginBottom="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            app:cardBackgroundColor="@color/fragmentColor"
-            app:cardElevation="8dp"
-            app:cardCornerRadius="8dp">
+            app:cardBackgroundColor="@color/dashBoardItemsColor"
+            app:cardElevation="50dp"
+            app:cardCornerRadius="20sp">
 
             <LinearLayout
                 android:layout_gravity="center_horizontal|center_vertical"
@@ -204,8 +242,9 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:background="@drawable/circle"
                     android:layout_gravity="center_horizontal"
                     android:src="@drawable/ic_view_assessment"/>
 

@@ -1,39 +1,51 @@
 package petrusproject.com.attendancesystem;
 
-
-import android.app.Activity;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import java.text.DateFormat;
+import java.util.Calendar;
 
-/**
- * A simple {@link Fragment} subclass.
- */
-public class Assessment extends Fragment {
+public class Assessment extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
+    Spinner categorySpinner, moduleSpinner;
+    ArrayAdapter<CharSequence> adapter;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_assessment);
 
-    public Assessment() {
-        // Required empty public constructor
+        //Get current date
+        Calendar dyt = Calendar.getInstance();
+        String currentDate = DateFormat.getDateInstance(DateFormat.SHORT).format(dyt.getTime());
+
+        TextView showDateAssess = findViewById(R.id.assessViewDateId);
+        showDateAssess.setText(currentDate);
+
+        //Defining a spinner to select categories from.
+        categorySpinner = findViewById(R.id.categorySpinnerId);
+        adapter = ArrayAdapter.createFromResource(this,R.array.category, R.layout.support_simple_spinner_dropdown_item);
+        adapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
+        categorySpinner.setAdapter(adapter);
+
+        //Define the click listener method on item selected
+        categorySpinner.setOnItemSelectedListener(this);
     }
 
-
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_assessment, container, false);
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        String itemSelected = parent.getItemAtPosition(position).toString();
+        Toast.makeText(parent.getContext(),itemSelected,Toast.LENGTH_LONG).show();
     }
 
     @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-    }
+    public void onNothingSelected(AdapterView<?> parent) {
 
-    @Override
-    public void onDetach() {
-        super.onDetach();
     }
 }
