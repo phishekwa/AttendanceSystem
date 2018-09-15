@@ -67,7 +67,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="16dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="16dp"
         android:orientation="horizontal"
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -78,19 +78,19 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/white"
             android:text="Date:"
-            android:textStyle="bold"
-            android:textSize="14sp"/>
+            android:textSize="14sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/assessViewDateId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@color/itemColor"
-            android:textColor="@color/black"
-            android:layout_marginHorizontal="50dp"
+            android:layout_marginHorizontal="10dp"
+            android:background="@drawable/rectangle"
             android:text="Date"
+            android:textColor="@color/white"
             android:textSize="15sp" />
 
     </LinearLayout>
@@ -102,26 +102,67 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="12dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.897"
+        app:layout_constraintHorizontal_bias="0.617"
         app:layout_constraintStart_toEndOf="@+id/linearLayout"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
-        <TextView
+        <!--<TextView
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:padding="4dp"
             android:text="Assessment Name"
             android:textColor="@color/white"
             android:textSize="15sp"
-            android:textStyle="bold" />
+            android:textStyle="bold" />-->
 
         <Spinner
             android:id="@+id/categorySpinnerId"
+            android:layout_width="191dp"
+            android:layout_height="30dp"
+            android:background="@drawable/rectangle"
+            android:elevation="35dp"
+            android:popupBackground="@color/primaryDark"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:popupElevation="@dimen/fab_margin"
+            android:theme="@style/NumberPickerTextColor"/>
+
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_width="190dp"
+            android:layout_height="35dp"
+            android:paddingLeft="8dp"
+            android:background="@drawable/rectangle"
+            android:paddingTop="5dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:text="Assessment# and T Marks"/>
+
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <NumberPicker
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:theme="@style/NumberPickerTextColor"
+                android:id="@+id/assessmentNumId"/>
+
+            <NumberPicker
+                android:layout_marginLeft="60dp"
+                android:theme="@style/NumberPickerTextColor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/assessmentTotalMarks"/>
+
+        </LinearLayout>
+
+
+
 
     </LinearLayout>
 

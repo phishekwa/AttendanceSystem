@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.NumberPicker;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -14,7 +15,10 @@ import java.util.Calendar;
 
 public class Assessment extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
+    //Declare variables
+
     Spinner categorySpinner, moduleSpinner;
+    NumberPicker numberPickerAssessNumber, numberPickerAssessMarks;
     ArrayAdapter<CharSequence> adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,13 +39,33 @@ public class Assessment extends AppCompatActivity implements AdapterView.OnItemS
         categorySpinner.setAdapter(adapter);
 
         //Define the click listener method on item selected
+        int initialPosition = categorySpinner.getSelectedItemPosition();
+        categorySpinner.setSelection(initialPosition, false);
         categorySpinner.setOnItemSelectedListener(this);
+
+        //set up a number pickers
+        numberPickerAssessNumber = findViewById(R.id.assessmentNumId);
+        numberPickerAssessNumber.setMinValue(1);
+        numberPickerAssessNumber.setMaxValue(10);
+        numberPickerAssessNumber.getWrapSelectorWheel();
+
+        numberPickerAssessMarks = findViewById(R.id.assessmentTotalMarks);
+        numberPickerAssessMarks.setMinValue(5);
+        numberPickerAssessMarks.setMaxValue(100);
+        numberPickerAssessMarks.getWrapSelectorWheel();
+
+
     }
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         String itemSelected = parent.getItemAtPosition(position).toString();
-        Toast.makeText(parent.getContext(),itemSelected,Toast.LENGTH_LONG).show();
+        if(itemSelected.equals("Select Category"))
+        {
+            return;
+        }
+        else
+            Toast.makeText(parent.getContext(),itemSelected,Toast.LENGTH_LONG).show();
     }
 
     @Override
