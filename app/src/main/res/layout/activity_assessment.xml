@@ -42,7 +42,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
-            android:text="Select Module below" />
+            android:text="Select Module" />
         <Spinner
             android:id="@+id/moduleSpinnerId"
             android:layout_width="wrap_content"
@@ -136,7 +136,7 @@
 
         <Spinner
             android:id="@+id/categorySpinnerId"
-            android:layout_width="190dp"
+            android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:backgroundTint="@color/spinnerColor"
             android:background="@drawable/spinner_bg"
@@ -154,7 +154,7 @@
             android:paddingTop="5dp"
             android:textColor="@color/white"
             android:textStyle="bold"
-            android:text="Assessment# and T Marks"/>
+            android:text="Number |     | Total Marks"/>
 
         <LinearLayout
             android:layout_width="wrap_content"

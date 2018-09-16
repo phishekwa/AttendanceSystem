@@ -5,15 +5,110 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="10dp"
+    android:orientation="vertical"
     android:background="@color/primaryDark"
     tools:context=".AttendanceView">
 
-    <TextView
+    <!--<LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Attendance View"
-        android:textStyle="bold"
-        android:layout_centerInParent="true"
-        android:textSize="20sp"/>
+        android:orientation="horizontal"
+        android:padding="5dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Searching for specific records"/>
+    </LinearLayout>-->
+
+    <LinearLayout
+        android:id="@+id/table_test_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/search_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <EditText
+                android:id="@+id/query_string"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="40"
+                android:inputType="textNoSuggestions"/>
+
+            <Spinner
+                android:id="@+id/mood_spinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="30"
+                android:background="@android:color/transparent"
+                android:entries="@array/moods"/>
+
+            <Spinner
+                android:id="@+id/gender_spinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="30"
+                android:background="@android:color/transparent"
+                android:entries="@array/gender"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <ImageButton
+                android:id="@+id/previous_button"
+                android:background="@drawable/spinner_bg"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                app:srcCompat="@drawable/ic_previous"/>
+
+            <EditText
+                android:id="@+id/page_number_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="20"
+                android:inputType="number"/>
+
+            <ImageButton
+                android:id="@+id/next_button"
+                android:background="@drawable/spinner_bg"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                app:srcCompat="@drawable/ic_next"/>
+
+            <TextView
+                android:id="@+id/table_details"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"/>
+
+            <Spinner
+                android:id="@+id/items_per_page_spinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="30"
+                android:background="@android:color/transparent"
+                android:entries="@array/items_per_page"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.evrencoskun.tableview.TableView
+        android:id="@+id/tableView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/primaryDark"
+        android:layout_below="@+id/table_test_container">
+
+    </com.evrencoskun.tableview.TableView>
 
 </RelativeLayout>
