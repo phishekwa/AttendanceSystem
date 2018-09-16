@@ -12,5 +12,6 @@
 
     <color name="circleColor">#feffffff</color>
     <color name="dashBoardItemsColor">#e39c5b21</color>
+    <color name="spinnerColor">#76796f6b</color>
     <color name="primaryDark">#765d4037</color>
 </resources>
