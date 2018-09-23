@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/primaryDark"
     android:layout_margin="10dp"
-    tools:context=".Attendance">
+    tools:context=".appModel.Attendance">
 
     <LinearLayout
         android:layout_width="wrap_content"

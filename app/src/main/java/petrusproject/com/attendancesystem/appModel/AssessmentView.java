@@ -1,7 +1,9 @@
-package petrusproject.com.attendancesystem;
+package petrusproject.com.attendancesystem.appModel;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import petrusproject.com.attendancesystem.R;
 
 public class AssessmentView extends AppCompatActivity {
 

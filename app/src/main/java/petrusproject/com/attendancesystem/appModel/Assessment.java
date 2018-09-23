@@ -1,4 +1,4 @@
-package petrusproject.com.attendancesystem;
+package petrusproject.com.attendancesystem.appModel;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,7 +11,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
+
+import petrusproject.com.attendancesystem.R;
 
 public class Assessment extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
@@ -21,6 +25,8 @@ public class Assessment extends AppCompatActivity implements AdapterView.OnItemS
     Spinner categorySpinner, moduleSpinner;
     NumberPicker numberPickerAssessNumber, numberPickerAssessMarks;
     ArrayAdapter<CharSequence> assessmentAdapter, moduleAdapter;
+    SimpleDateFormat dateFormat;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,9 +41,11 @@ public class Assessment extends AppCompatActivity implements AdapterView.OnItemS
         categorySpinner = findViewById(R.id.categorySpinnerId);
 
         //Get current date
-        Calendar dyt = Calendar.getInstance();
+        /*Calendar dyt = Calendar.getInstance();
         String currentDate = DateFormat.getDateInstance(DateFormat.SHORT).format(dyt.getTime());
-        showDate.setText(currentDate);
+        showDate.setText(currentDate);*/
+        dateFormat = new SimpleDateFormat("dd MMM YYYY");
+        showDate.setText(dateFormat.format(new Date()));
 
         //Setting a assessment spinner assessmentAdapter
         assessmentAdapter = ArrayAdapter.createFromResource(this,R.array.category, R.layout.support_simple_spinner_dropdown_item);

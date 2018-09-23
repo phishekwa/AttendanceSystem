@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="300dp"
+    android:layout_height="400dp"
+    android:layout_gravity="center"
+    android:paddingLeft="15sp"
+    android:orientation="vertical"
+    android:background="@color/primaryDark"
+    android:backgroundTint="@color/spinnerColor">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="120dp"
+        android:orientation="vertical"
+        android:paddingTop="25sp"
+        android:paddingLeft="25dp">
+
+        <EditText
+            android:id="@+id/edTxtAdd_S_NumberId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:inputType="number"
+            android:hint="Enter Student Number"/>
+
+        <EditText
+            android:id="@+id/edTxtAdd_S_NameId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:inputType="textCapWords"
+            android:hint="Enter Student Name"/>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="110dp"
+        android:background="@drawable/spinner_bg"
+        android:backgroundTint="@color/spinnerColor"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:clickable="true"
+        android:id="@+id/saveRecordsBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"/>
+
+</LinearLayout>

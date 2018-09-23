@@ -1,4 +1,4 @@
-package petrusproject.com.attendancesystem;
+package petrusproject.com.attendancesystem.appModel;
 
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
@@ -12,7 +12,11 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
+
+import petrusproject.com.attendancesystem.R;
 
 public class Attendance extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
@@ -22,6 +26,7 @@ public class Attendance extends AppCompatActivity implements AdapterView.OnItemS
     EditText edItemSelected;
     Spinner moduleSpinner;
     ArrayAdapter<CharSequence> moduleAdapter;
+    SimpleDateFormat dateFormat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,9 +39,11 @@ public class Attendance extends AppCompatActivity implements AdapterView.OnItemS
         moduleSpinner = findViewById(R.id.moduleSpinnerAttendId);
 
         //Get current date
-        Calendar dyt = Calendar.getInstance();
+        /*Calendar dyt = Calendar.getInstance();
         String currentDate = DateFormat.getDateInstance(DateFormat.SHORT).format(dyt.getTime());
-        showDate.setText(currentDate);
+        showDate.setText(currentDate);*/
+        dateFormat = new SimpleDateFormat("dd MMM YYYY");
+        showDate.setText(dateFormat.format(new Date()));
 
 
         //Defining the adapter for a spinner

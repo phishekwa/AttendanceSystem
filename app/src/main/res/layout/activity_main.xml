@@ -7,7 +7,7 @@
     android:layout_margin="10dp"
     android:orientation="vertical"
     android:weightSum="18"
-    tools:context=".MainActivity">
+    tools:context=".appModel.MainActivity">
 <!--<android.support.v4.widget.DrawerLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
