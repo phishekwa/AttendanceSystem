@@ -13,9 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/attendanceTableView"
-        app:tableView_headerColor="@color/spinnerColor"
-        android:scrollbarAlwaysDrawHorizontalTrack="true"
-        android:scrollbarAlwaysDrawVerticalTrack="true">
+        app:tableView_headerColor="@color/spinnerColor">
 
     </de.codecrafters.tableview.TableView>
 

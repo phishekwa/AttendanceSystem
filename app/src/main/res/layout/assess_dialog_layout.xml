@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="360dp"
+    android:layout_height="460dp"
+    android:layout_gravity="center"
+    android:paddingLeft="10sp"
+    android:orientation="vertical"
+    android:background="@color/primaryDark"
+    android:backgroundTint="@color/spinnerColor">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:paddingTop="15dp"
+        android:paddingLeft="5dp">
+
+        <EditText
+            android:id="@+id/studentNumber2Id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:singleLine="true"
+            android:hint="Student Number"/>
+
+        <EditText
+            android:id="@+id/moduleCId"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:hint="Module Code"
+            android:inputType="textCapCharacters"
+            android:singleLine="true"
+            android:textAllCaps="true" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:paddingTop="15dp"
+        android:paddingLeft="5dp">
+
+        <EditText
+            android:id="@+id/test1Id"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:singleLine="true"
+            android:hint="test 1"
+            android:inputType="number"/>
+
+        <EditText
+            android:id="@+id/test2Id"
+            android:layout_marginLeft="5dp"
+            android:layout_width="55dp"
+            android:layout_height="40dp"
+            android:singleLine="true"
+            android:hint="test 2"
+            android:inputType="number"/>
+
+        <EditText
+            android:id="@+id/test3Id"
+            android:layout_marginLeft="5dp"
+            android:layout_width="55dp"
+            android:layout_height="40dp"
+            android:singleLine="true"
+            android:hint="test 3"
+            android:inputType="number"/>
+
+        <EditText
+            android:id="@+id/qz1Id"
+            android:layout_marginLeft="5dp"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:singleLine="true"
+            android:hint="qz 1"
+            android:inputType="number"/>
+
+        <EditText
+            android:id="@+id/qz2Id"
+            android:layout_marginLeft="5dp"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:singleLine="true"
+            android:hint="qz 2"
+            android:inputType="number"/>
+
+        <EditText
+            android:id="@+id/qz3Id"
+            android:layout_marginLeft="5dp"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:singleLine="true"
+            android:hint="qz 3"
+            android:inputType="number"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:paddingTop="15dp"
+        android:paddingLeft="5dp">
+
+        <EditText
+            android:id="@+id/assignment1Id"
+            android:layout_width="115dp"
+            android:layout_height="40dp"
+            android:singleLine="true"
+            android:hint="assignment1"
+            android:inputType="number"/>
+
+        <EditText
+            android:id="@+id/assignment2Id"
+            android:layout_width="115dp"
+            android:layout_height="40dp"
+            android:singleLine="true"
+            android:hint="assignment2"
+            android:inputType="number"/>
+
+        <EditText
+            android:id="@+id/assignment3Id"
+            android:layout_width="115dp"
+            android:layout_height="40dp"
+            android:singleLine="true"
+            android:hint="assignment3"
+            android:inputType="number"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:paddingTop="15dp"
+        android:paddingLeft="5dp">
+
+        <EditText
+            android:id="@+id/examMarksId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:layout_gravity="center_horizontal"
+            android:hint="Exam Marks"
+            android:inputType="number"/>
+
+    </LinearLayout>
+
+
+    <Button
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="110dp"
+        android:background="@drawable/spinner_bg"
+        android:backgroundTint="@color/spinnerColor"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:clickable="true"
+        android:id="@+id/saveRecordsBtn4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"/>
+
+</LinearLayout>

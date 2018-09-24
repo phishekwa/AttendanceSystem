@@ -7,13 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
 
 import de.codecrafters.tableview.TableView;
 import de.codecrafters.tableview.toolkit.SimpleTableDataAdapter;
@@ -27,11 +23,9 @@ public class AttendanceView extends AppCompatActivity {
     EditText studentNum, moduleCode, theDate, attendanceStatus;
     Button saveButton;
     TableView<String[]> tb;
-    AttendanceTableHelper helper;
-    DbAdapter adapter;
+    TableHelper helper;
     FloatingActionButton fabButton;
     SimpleDateFormat dateFormat;
-    AttendanceTask attendanceTask;
 
 
     @Override
@@ -43,11 +37,11 @@ public class AttendanceView extends AppCompatActivity {
         dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
         //TableView
-        helper = new AttendanceTableHelper(this);
+        helper = new TableHelper(this);
         tb = findViewById(R.id.attendanceTableView);
         tb.setColumnCount(4);
-        tb.setHeaderAdapter(new SimpleTableHeaderAdapter(this,helper.getTableHeader()));
-        tb.setDataAdapter(new SimpleTableDataAdapter(this, helper.getTable()));
+        tb.setHeaderAdapter(new SimpleTableHeaderAdapter(this,helper.getAttendanceTableHeader()));
+        tb.setDataAdapter(new SimpleTableDataAdapter(this, helper.getAttendanceTableContent()));
 
 
         fabButton = findViewById(R.id.fab);
@@ -79,7 +73,7 @@ public class AttendanceView extends AppCompatActivity {
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AttendanceTask task = new AttendanceTask();
+                AddingAttendance task = new AddingAttendance();
                 task.setStudent_number(studentNum.getText().toString());
                 task.setModule(moduleCode.getText().toString());
                 task.setTheDate(theDate.getText().toString());
@@ -91,7 +85,7 @@ public class AttendanceView extends AppCompatActivity {
                     moduleCode.setText("");
                     attendanceStatus.setText("");
                     theDate.setText("");
-                    tb.setDataAdapter(new SimpleTableDataAdapter(AttendanceView.this, helper.getTable()));
+                    tb.setDataAdapter(new SimpleTableDataAdapter(AttendanceView.this, helper.getAttendanceTableContent()));
 
                 }else{
                     Toast.makeText(AttendanceView.this,"Records not saved!",Toast.LENGTH_LONG).show();

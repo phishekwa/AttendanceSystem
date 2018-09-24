@@ -36,13 +36,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-       // myDb = new DbHelper(this);
+       myDb = new DbHelper(this);
 
         //Defining cards
-        assessCard = (CardView) findViewById(R.id.assessCardViewId);
-        attendanceCard = (CardView) findViewById(R.id.takeAttendanceCardViewId);
-        viewAssessmentCard = (CardView) findViewById(R.id.viewAssessCardViewId);
-        viewAttendanceCard = (CardView) findViewById(R.id.viewAttendanceCardViewId);
+        assessCard = findViewById(R.id.assessCardViewId);
+        attendanceCard = findViewById(R.id.takeAttendanceCardViewId);
+        viewAssessmentCard = findViewById(R.id.viewAssessCardViewId);
+        viewAttendanceCard = findViewById(R.id.viewAttendanceCardViewId);
 
         //Set click listeners to cards
         assessCard.setOnClickListener(this);
@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         student_number = inputDialog.findViewById(R.id.edTxtAdd_S_NumberId);
         student_name = inputDialog.findViewById(R.id.edTxtAdd_S_NameId);
 
-        saveButton = inputDialog.findViewById(R.id.saveRecordsBtn);
+        saveButton = inputDialog.findViewById(R.id.saveRecordsBtnS);
 
         //set onLick to be able to save records to the database
         saveButton.setOnClickListener(new View.OnClickListener() {
@@ -148,7 +148,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //Initialise the views
         module = inputDialog.findViewById(R.id.edTxtAddModuleId);
 
-        saveButton = inputDialog.findViewById(R.id.saveRecordsBtn);
+        saveButton = inputDialog.findViewById(R.id.saveRecordsBtnM);
 
         //set onLick to be able to save records to the database
         saveButton.setOnClickListener(new View.OnClickListener() {

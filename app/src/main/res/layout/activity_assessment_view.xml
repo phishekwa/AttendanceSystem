@@ -5,15 +5,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="10dp"
+    android:orientation="vertical"
     android:background="@color/primaryDark"
     tools:context=".appModel.AssessmentView">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <de.codecrafters.tableview.TableView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Assessment View"
-        android:textStyle="bold"
-        android:layout_centerInParent="true"
-        android:textSize="20sp"/>
+        android:id="@+id/attendanceTableView2"
+        app:tableView_headerColor="@color/spinnerColor">
+
+    </de.codecrafters.tableview.TableView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:clickable="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/ic_add"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="22dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginRight="21dp"
+        android:background="@drawable/spinner_bg"
+        app:backgroundTint="@color/spinnerColor" />
+
 
 </RelativeLayout>

@@ -1,6 +1,6 @@
 package petrusproject.com.attendancesystem.appModel;
 
-public class AttendanceTask {
+public class AddingAttendance {
 
     //declare variables
     private String module, theDate, attended;
